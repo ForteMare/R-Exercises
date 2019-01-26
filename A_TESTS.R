@@ -34,3 +34,25 @@ factoring <- factor(factorsGroup)
 factoring
 
 
+# Levels function for renaming elements
+
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+factor_survey_vector
+
+# Specify the levels of factor_survey_vector
+levels(factor_survey_vector) <- c("Female", "Male")
+factor_survey_vector
+
+# What mtcars contains
+mtcars
+
+head(mtcars)
+
+
+# Order function testing from last time 
+testOrder <- c(50, 10, 150, 5, 200)
+order(testOrder)
+
+
+
