@@ -21,3 +21,14 @@ ueq1 <- c(4, 7, 9)
 ueq2 <- c(5, 10)
 ueq1 + ueq2 #Displays a warning message and continues adding by repeating the vector
 
+# Naming objects in vectors
+days <- c("Monday", "Tuesday", "Wednesday")
+degrees <- c(15, 17, 16)
+names(degrees) <- days
+degrees
+
+# Sum calculates all elements in a vector
+sum(degrees)
+
+# Selecting elements in a vector. Numbers go from 1 to vector size
+degrees[2]

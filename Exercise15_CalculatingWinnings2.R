@@ -7,3 +7,4 @@ names(roulette_vector) <- days_vector
 
 # Assign to total_daily how much you won/lost on each day
 total_daily <- poker_vector + roulette_vector
+total_daily
