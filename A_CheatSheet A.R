@@ -1,3 +1,9 @@
+# Setting up some data for examples below
+even <- c(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)
+odd <- c(1, 3, 5, 7, 9, 11, 13, 15, 17, 19)
+week <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+weektemp <- c(22, 27, 31, 25, 33, 34, 35)
+
 # Arithmetic result 
 3 + 2
 
@@ -32,3 +38,4 @@ sum(degrees)
 
 # Selecting elements in a vector. Numbers go from 1 to vector size
 degrees[2]
+
