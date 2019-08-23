@@ -42,3 +42,16 @@ wkdays <- week[c(1, 2, 3, 4, 5)]
 wkdays
 wkends <- week[c(6, 7)]
 wkends
+
+# Short hand for selecting elements
+weektemp[2:6]
+
+# You can also call vectors by name
+weektemp["Thursday"]
+weektemp[c("Tuesday", "Sunday")]
+
+# calculating the average (mean)
+mean(weektemp)
+
+#Using comparison operators on vectors
+weektemp >= 29
