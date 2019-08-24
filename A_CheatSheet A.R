@@ -55,3 +55,10 @@ mean(weektemp)
 
 #Using comparison operators on vectors
 weektemp >= 29
+
+hotdays <- weektemp >= 31
+hotdays
+
+# Making new vectors with comparisons, now they only contain preferences
+gooddays <- weektemp[hotdays]
+gooddays
