@@ -15,3 +15,4 @@ factor_temperature_vector <- factor(temperature_vector, ordered = TRUE, levels =
 # levels = temperature vector is short-hand for c(...)
 factor_temperature_vector
 
+# There is a way to rename factors!
