@@ -20,6 +20,18 @@ return_jedi <- c(309.306, 165.8)
 # Compiling into matrix
 # Create box_office
 box_office <- c(new_hope, empire_strikes, return_jedi)
+box_office
 
 # Construct star_wars_matrix
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
+star_wars_matrix
+
+# Naming rows and columns in SW matrix
+region <- c("US", "Intl.")
+titles <- c("A New Hope", "The Empire Strikes Back", "Return of The Jedi")
+
+colnames(star_wars_matrix) <- region
+rownames(star_wars_matrix) <- titles
+
+star_wars_matrix
+
