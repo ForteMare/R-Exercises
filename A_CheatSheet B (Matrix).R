@@ -9,3 +9,17 @@ matrix(1:10, byrow = TRUE, nrow = 2)
 # Alternatively
 matrix(1:10, byrow = FALSE, nrow = 2)
 matrix(1:10, byrow = FALSE, ncol = 2)
+
+
+# Adding Star Wars data from DataCamp.
+# Box office in millions. First is domestic B.O. and second Intl. 
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+
+# Compiling into matrix
+# Create box_office
+box_office <- c(new_hope, empire_strikes, return_jedi)
+
+# Construct star_wars_matrix
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
