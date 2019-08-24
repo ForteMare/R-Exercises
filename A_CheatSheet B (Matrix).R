@@ -58,3 +58,15 @@ star_wars_matrix2
 # Combining originals and prequels. Notice we use matrix without sums! 
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 all_wars_matrix
+
+# Now we find calculations for the All Wars Matrix!
+total_revenue_vector <- colSums(all_wars_matrix)
+total_revenue_vector
+
+# Finding elements in the matrix. Empty space means 'all elements' 
+intl_earnings_total <- all_wars_matrix[,2]
+mean(intl_earnings_total)
+
+# Arithmetics with matrices is same as with vectors.
+# Every element in the matrix is multiplied by the given number.
+all_wars_matrix * 2
