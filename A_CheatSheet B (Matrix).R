@@ -40,3 +40,21 @@ total_film_earnings <- rowSums(star_wars_matrix)
 total_film_earnings
 total_region_earnings <- colSums(star_wars_matrix)
 total_region_earnings
+
+# Adding columns to matrix
+original_wars_matrix <- cbind(star_wars_matrix, total_film_earnings)
+original_wars_matrix
+
+# ------ ADDING PREQUELS ------
+box_office_prequels <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
+names_prequels <- c("The Phantom Menace", "Attack of The Clones", "Revenge of The Sith")
+star_wars_matrix2 <- matrix(box_office_prequels, byrow = TRUE, nrow = 3)
+colnames(star_wars_matrix2) <- region
+rownames(star_wars_matrix2) <- names_prequels
+
+star_wars_matrix2
+#------------------------------
+
+# Combining originals and prequels. Notice we use matrix without sums! 
+all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
+all_wars_matrix
