@@ -36,7 +36,7 @@ rownames(star_wars_matrix) <- titles
 star_wars_matrix
 
 # Calculate sums by matrix row and column!
-worldwide_total <- rowSums(star_wars_matrix)
-worldwide_total
-total_worldwide <- colSums(star_wars_matrix)
-total_worldwide
+total_film_earnings <- rowSums(star_wars_matrix)
+total_film_earnings
+total_region_earnings <- colSums(star_wars_matrix)
+total_region_earnings
