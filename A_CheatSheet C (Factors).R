@@ -16,3 +16,26 @@ factor_temperature_vector <- factor(temperature_vector, ordered = TRUE, levels =
 factor_temperature_vector
 
 # There is a way to rename factors!
+levels(factor_temperature_vector) <- c("lo", "med", "hi")
+factor_temperature_vector
+
+# To see summary of the data use the following function
+summary(factor_gender_vector)
+
+# Another example for ordering factors 
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
+factor_speed_vector
+
+# Choosing elements in a factor vector
+da2 <- factor_speed_vector[2]
+da5 <- factor_speed_vector[5]
+
+da2 > da5
+
+
+
+
+
+
+
