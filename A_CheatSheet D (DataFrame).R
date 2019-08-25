@@ -24,3 +24,23 @@ planets_df
 planets_df[,3]
 planets_df[2,4]
 planets_df[, "rings"]
+#planets_df["rings", ] For some reason does not work correctly. Works well on mrcars
+
+# **IMPORTANT** Alternative to the above selection method is using the $ sign
+planets_df$name
+
+# Using subset is the more elegant way of finding elements in a DS
+subset(planets_df, diameter < 1)
+
+# Sorting elements in any data set using order() function
+# This persistently does not work on this computer!!!
+dmt <- c(1000, 10, 100)
+order(dmt)
+reorder <- dmt[order(dmt)]
+reorder
+
+# Using order on the planets DataFrame
+positions <- order(planets_df$diameter)
+positions
+planets_df[positions,] #This is the working way on how to order DF
+
