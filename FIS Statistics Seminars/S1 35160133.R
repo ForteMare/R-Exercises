@@ -43,3 +43,8 @@ IQR(x2) # Returns the Inter Quartile Range
 sd(x2) # Returns the Standard Deviation
 var(x2) # Returns Correlation, Variance, and Covariance
 
+#hist(x1) # Create a histogram TURNED OFF
+#boxplot(x1) # Create a boxlot TURNED OFF
+
+#hist(x2) # Create a histogram TURNED OFF
+#boxplot(x2) # Create a boxlot TURNED OFF
