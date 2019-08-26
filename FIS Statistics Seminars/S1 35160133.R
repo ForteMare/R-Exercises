@@ -14,7 +14,7 @@ imported_raw_data
 assigned_vars <- c("price", "cont_rating", "prime_genre", "lang.num")
 renamed_vars <- c("price", "pg", "genre", "languages")
 
-my_data <- imported_raw_data[assigned_variables]
+my_data <- imported_raw_data[assigned_vars]
 my_data
 
 names(my_data) <- renamed_vars
@@ -43,8 +43,15 @@ IQR(x2) # Returns the Inter Quartile Range
 sd(x2) # Returns the Standard Deviation
 var(x2) # Returns Correlation, Variance, and Covariance
 
-#hist(x1) # Create a histogram TURNED OFF
-#boxplot(x1) # Create a boxlot TURNED OFF
+# Create a histogram and a boxplot for numeric variables
+hist(x1) # Create a histogram TURNED OFF
+boxplot(x1) # Create a boxlot TURNED OFF
 
 #hist(x2) # Create a histogram TURNED OFF
-#boxplot(x2) # Create a boxlot TURNED OFF
+boxplot(x2) # Create a boxlot TURNED OFF
+
+# Plotting a chart 
+plot(x1, x2, xlab = "App Price", ylab = "Number of Languages")
+
+# Pearson Correlation Coefficient calculation
+cor(x1, x2, use = "pairwise.complete.obs", method = "pearson")
