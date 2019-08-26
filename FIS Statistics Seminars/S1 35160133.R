@@ -51,7 +51,12 @@ boxplot(x1) # Create a boxlot TURNED OFF
 boxplot(x2) # Create a boxlot TURNED OFF
 
 # Plotting a chart 
-plot(x1, x2, xlab = "App Price", ylab = "Number of Languages")
+plot(x1, x2, xlab = "App Price", ylab = "Number of Languages", 
+     main = "Plot Diagram for Variables Price and No. of Languages")
 
 # Pearson Correlation Coefficient calculation
-cor(x1, x2, use = "pairwise.complete.obs", method = "pearson")
+cor.test(x1, x2, method = "pearson")
+
+# Q2, E) INCOMPLETE
+lm(x1~x2, data = my_data)
+
