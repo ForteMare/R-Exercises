@@ -70,3 +70,32 @@ summary(lm(x1~x2, data = my_data))
 # -----------------------------------------------------------------
 
 # ------ 3. DESCRIPTIVE VARIABLE ANALYSIS OF GENRE AND CONTENT RATING ------
+
+#Creating abbreviated variables
+y1 <- my_data$pg
+y2 <- my_data$genre
+
+
+# Displaying frequencies for PG rating, not adequate
+table(y1)
+
+# Displaying frequencies for genre
+table(y2)
+
+# Graphical display of information with barplot
+barplot(prop.table(table(y1)), main = "Structure of PG Rating", 
+        col = rainbow(4), ylab = "Percentage", xlab = "PG Rating")
+
+# Graphical display of information with piechart
+pie(prop.table(table(y2)), main = "Structure of Genre", col = c("yellow", "cyan"))
+
+# Making a contingency table 
+addmargins(table(y1, y2))
+
+# Creating double structure - 3.E 
+addmargins(prop.table(table(y1, y2)) * 100)
+
+# Display of double structure
+dt <- prop.table(table(y2, y1)) * 100
+barplot(dt, col = c("blue", "red"), legend.text = c("Games", "Other"), 
+        main = "Structure of Genre and PG Rating", xlab = "PG Rating", ylab = "Percentage") 
