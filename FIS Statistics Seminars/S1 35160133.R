@@ -7,7 +7,7 @@ imported_raw_data <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\ABC.csv", he
 imported_raw_data
 
 # Display data
-#View(imported_raw_data) TURNED OFF
+#View(imported_raw_data) 
 
 # Editing variables
 assigned_vars <- c("price", "cont_rating", "prime_genre", "lang.num")
@@ -49,17 +49,22 @@ boxplot(x1) # Create a boxlot TURNED OFF
 #hist(x2) # Create a histogram TURNED OFF
 boxplot(x2) # Create a boxlot TURNED OFF
 
-# Plotting a chart 
+# Plotting the graph 
 plot(x1, x2, xlab = "App Price", ylab = "Number of Languages", 
      main = "Plot Diagram for Variables Price and No. of Languages")
 
 # Pearson Correlation Coefficient calculation
 cor.test(x1, x2, method = "pearson")
 
-# Q2, E) INCOMPLETE
+# Relationships between numeric variables
 lm(x1~x2, data = my_data)
 
-# Calculating Determination coefficient Q2, F) INCOMPLETE
+# Plotting the graph with correlations
+plot(x1, x2, xlab = "App Price", ylab = "Number of Languages", 
+     main = "Plot Diagram for Variables Price and No. of Languages")
+abline(lm(x1~x2, data = my_data), col = "blue")
+
+# Calculating Determination coefficient
 summary(lm(x1~x2, data = my_data))
 
 # -----------------------------------------------------------------
