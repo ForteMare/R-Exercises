@@ -11,7 +11,7 @@ imported_raw_data
 
 # Editing variables
 assigned_vars <- c("price", "cont_rating", "prime_genre", "lang.num")
-renamed_vars <- c("price", "pg", "genre", "languages")
+renamed_vars <- c("price", "pg", "genre", "languages") # PG is short for Parental Guidance
 
 my_data <- imported_raw_data[assigned_vars]
 my_data
@@ -22,7 +22,7 @@ names(my_data) <- renamed_vars
 # -----------------------------------------------------------------
 
 # ------ 2. NUMERIC VARIABLE ANALYSIS OF PRICE AND LANGUAGES ------
-# Making a short-hand: 
+# Assagning new variables for brevity: 
 x1 <- my_data$price
 x2 <- my_data$languages
 
