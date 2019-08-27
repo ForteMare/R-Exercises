@@ -9,7 +9,6 @@ imported_raw_data
 # Display data
 #View(imported_raw_data) TURNED OFF
 
-
 # Editing variables
 assigned_vars <- c("price", "cont_rating", "prime_genre", "lang.num")
 renamed_vars <- c("price", "pg", "genre", "languages")
@@ -60,3 +59,9 @@ cor.test(x1, x2, method = "pearson")
 # Q2, E) INCOMPLETE
 lm(x1~x2, data = my_data)
 
+# Calculating Determination coefficient Q2, F) INCOMPLETE
+summary(lm(x1~x2, data = my_data))
+
+# -----------------------------------------------------------------
+
+# ------ 3. DESCRIPTIVE VARIABLE ANALYSIS OF GENRE AND CONTENT RATING ------
