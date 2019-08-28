@@ -10,8 +10,8 @@ original
 View(original) 
 
 # Editing variables
-dodeljene_sprem <- c("rating_count_tot", "rating_count_ver", "prime_genre", "lang.num")
-moje_sprem <- c("sveR", "trenutniR", "zanr", "jezici") # PG is short for Parental Guidance
+dodeljene_sprem <- c("rating_count_tot", "rating_count_ver", "prime_genre", "cont_rating")
+moje_sprem <- c("sveR", "trenutniR", "zanr", "sadrzaj") # PG is short for Parental Guidance
 
 podatki <- original[dodeljene_sprem]
 podatki
@@ -74,8 +74,8 @@ summary(lm(ysprem~x_var, data = my_data))
 # ------ 3. DESCRIPTIVE VARIABLE ANALYSIS OF GENRE AND CONTENT RATING ------
 
 #Creating abbreviated variables
-a <- my_data$pg
-b <- my_data$genre
+a <- my_data$sadrzaj
+b <- my_data$zanr
 
 # Displaying frequencies for PG rating, not adequate
 freq(a, plot = FALSE)
@@ -103,11 +103,11 @@ barplot(dt, col = c("blue", "red"), legend.text = c("Games", "Other"),
         xlab = "PG Rating", ylab = "Percentage")
 
 # Frequency Table 
-calc <- table(b, a)
-chi <- chisq.test(calc)
-chi$expected
+racunica <- table(b, a)
+ki <- chisq.test(racunica)
+ki$expected
 
 # Q3 - G
-assocstats(calc)
+assocstats(racunica)
 
 # -------------------------- FINISH -----------------------------------
