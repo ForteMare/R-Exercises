@@ -23,8 +23,8 @@ View(podatki)
 
 # ------ 2. NUMERIC VARIABLE ANALYSIS OF PRICE AND LANGUAGES ------
 # Assigning new variables for brevity: 
-ysprem <- my_data$trenutniR
-xsprem <- my_data$sveR
+ysprem <- podatki$trenutniR
+xsprem <- podatki$sveR
 
 summary(ysprem)
 
@@ -74,8 +74,8 @@ summary(lm(ysprem~x_var, data = my_data))
 # ------ 3. DESCRIPTIVE VARIABLE ANALYSIS OF GENRE AND CONTENT RATING ------
 
 #Creating abbreviated variables
-a <- my_data$sadrzaj
-b <- my_data$zanr
+a <- podatki$sadrzaj
+b <- podatki$zanr
 
 # Displaying frequencies for PG rating, not adequate
 freq(a, plot = FALSE)
