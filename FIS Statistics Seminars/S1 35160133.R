@@ -78,17 +78,17 @@ a <- my_data$pg
 b <- my_data$genre
 
 # Displaying frequencies for PG rating, not adequate
-hist(a)
+freq(a, plot = FALSE)
 
 # Displaying frequencies for genre
-hist(b)
+freq(b, plot = FALSE)
 
 # Graphical display of information with barplot
-barplot(prop.table(table(a)), main = "Structure of PG Rating", 
-        col = rainbow(4), ylab = "Percentage", xlab = "PG Rating")
+barplot(prop.table(table(a)), main = "PG Rating Structure", 
+        col = rainbow(8), ylab = "Percentage", xlab = "PG Rating")
 
 # Graphical display of information with piechart
-pie(prop.table(table(b)), main = "Structure of Genre", col = c("yellow", "cyan"))
+pie(prop.table(table(b)), main = "Structure of Genre", col = rainbow(6))
 
 # Making a contingency table 
 addmargins(table(a, b))
