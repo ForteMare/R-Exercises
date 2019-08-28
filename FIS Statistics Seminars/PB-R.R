@@ -22,33 +22,33 @@ xsprem <- podatki$sveR
 
 summary(ysprem)
 
-range(ysprem) # Returns Range of Values
-diff(range(ysprem)) # Returns Lagged Difference
-IQR(ysprem) # Returns the Inter Quartile Range
-sd(ysprem) # Returns the Standard Deviation
-var(ysprem) # Returns Correlation, Variance, and Covariance
+range(ysprem) 
+diff(range(ysprem)) 
+IQR(ysprem)
+sd(ysprem) 
+var(ysprem) 
 
 summary(xsprem)
 
-range(xsprem) # Returns Range of Values
-diff(range(xsprem)) # Returns Lagged Difference
-IQR(xsprem) # Returns the Inter Quartile Range
-sd(xsprem) # Returns the Standard Deviation
-var(xsprem) # Returns Correlation, Variance, and Covariance
+range(xsprem) 
+diff(range(xsprem)) 
+IQR(xsprem) 
+sd(xsprem) 
+var(xsprem) 
 
-hist(ysprem) # Create a histogram 
-boxplot(ysprem) # Create a boxlot 
+hist(ysprem)  
+boxplot(ysprem)  
 
-hist(xsprem) # Create a histogram
-boxplot(xsprem) # Create a boxlot
+hist(xsprem) 
+boxplot(xsprem) 
 
 
 plot(xsprem, ysprem, ylab = "rejtingSVE", xlab = "Languages", 
-     main = "Regression Plot for Variables Price and Languages")
+     main = "Regresijski grafikon")
 
 cor.test(xsprem, ysprem, method = "pearson") 
 
-lm(ysprem~x_var, data = my_data) # This is the correct order
+lm(ysprem~x_var, data = my_data) 
 
 plot(xsprem, ysprem, ylab = "rejtingSVE", xlab = "Languages", 
      main = "Linear Regression Plot for Variables Price and Languages")
