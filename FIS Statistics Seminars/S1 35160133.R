@@ -93,8 +93,8 @@ pie(prop.table(table(b)), main = "Structure of Genre", col = rainbow(6))
 # Making a contingency table 
 addmargins(table(a, b))
 
-# Creating double structure - 3.E 
-addmargins(prop.table(table(a, b)) * 100)
+# Creating double structure
+addmargins(prop.table(table(b, a)) * 100)
 
 # Display of double structure
 dt <- prop.table(table(b, a)) * 100
