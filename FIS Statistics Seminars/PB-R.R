@@ -1,73 +1,73 @@
 # ------ 1. DESCRIPTION AND EDITING OF DATA ------
 
 # Importing the file: NOTICE THIS IS A TEMPORARY LOCATION!
-imported_raw_data <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\ABC.csv", header = TRUE, sep = ',')
+original <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\ABC.csv", header = TRUE, sep = ',')
 
 # Display the imported file 
-imported_raw_data
+original
 
 # Display data
-#View(imported_raw_data) 
+View(original) 
 
 # Editing variables
-assigned_vars <- c("price", "cont_rating", "prime_genre", "lang.num")
-renamed_vars <- c("price", "pg", "genre", "languages") # PG is short for Parental Guidance
+dodeljene_sprem <- c("rating_count_tot", "rating_count_ver", "prime_genre", "lang.num")
+moje_sprem <- c("sveR", "trenutniR", "zanr", "jezici") # PG is short for Parental Guidance
 
-my_data <- imported_raw_data[assigned_vars]
-my_data
+podatki <- original[dodeljene_sprem]
+podatki
 
-names(my_data) <- renamed_vars
-View(my_data)
+names(podatki) <- moje_sprem
+View(podatki)
 
 # -----------------------------------------------------------------
 
 # ------ 2. NUMERIC VARIABLE ANALYSIS OF PRICE AND LANGUAGES ------
 # Assigning new variables for brevity: 
-y_var <- my_data$price
-x_var <- my_data$languages
+ysprem <- my_data$trenutniR
+xsprem <- my_data$sveR
 
-summary(y_var)
+summary(ysprem)
 
-range(y_var) # Returns Range of Values
-diff(range(y_var)) # Returns Lagged Difference
-IQR(y_var) # Returns the Inter Quartile Range
-sd(y_var) # Returns the Standard Deviation
-var(y_var) # Returns Correlation, Variance, and Covariance
+range(ysprem) # Returns Range of Values
+diff(range(ysprem)) # Returns Lagged Difference
+IQR(ysprem) # Returns the Inter Quartile Range
+sd(ysprem) # Returns the Standard Deviation
+var(ysprem) # Returns Correlation, Variance, and Covariance
 
-summary(x_var)
+summary(xsprem)
 
-range(x_var) # Returns Range of Values
-diff(range(x_var)) # Returns Lagged Difference
-IQR(x_var) # Returns the Inter Quartile Range
-sd(x_var) # Returns the Standard Deviation
-var(x_var) # Returns Correlation, Variance, and Covariance
+range(xsprem) # Returns Range of Values
+diff(range(xsprem)) # Returns Lagged Difference
+IQR(xsprem) # Returns the Inter Quartile Range
+sd(xsprem) # Returns the Standard Deviation
+var(xsprem) # Returns Correlation, Variance, and Covariance
 
 # Create a histogram and a boxplot for numeric variables
-hist(y_var) # Create a histogram 
-boxplot(y_var) # Create a boxlot 
+hist(ysprem) # Create a histogram 
+boxplot(ysprem) # Create a boxlot 
 
-hist(x_var) # Create a histogram
-boxplot(x_var) # Create a boxlot
+hist(xsprem) # Create a histogram
+boxplot(xsprem) # Create a boxlot
 
 
 
 # Regression Plot Diagram 
-plot(x_var, y_var, ylab = "Price", xlab = "Languages", 
+plot(xsprem, ysprem, ylab = "rejtingSVE", xlab = "Languages", 
      main = "Regression Plot for Variables Price and Languages")
 
 # Pearson Correlation Coefficient calculation
-cor.test(x_var, y_var, method = "pearson") # Order of X and Y does not matter
+cor.test(xsprem, ysprem, method = "pearson") # Order of X and Y does not matter
 
 # Relationships between numeric variables
-lm(y_var~x_var, data = my_data) # This is the correct order
+lm(ysprem~x_var, data = my_data) # This is the correct order
 
 # Plotting the graph with correlations
-plot(x_var, y_var, ylab = "Price", xlab = "Languages", 
+plot(xsprem, ysprem, ylab = "rejtingSVE", xlab = "Languages", 
      main = "Linear Regression Plot for Variables Price and Languages")
-abline(lm(y_var~x_var, data = my_data), col = "blue")
+abline(lm(ysprem~x_var, data = my_data), col = "blue")
 
 # Calculating Determination coefficient
-summary(lm(y_var~x_var, data = my_data))
+summary(lm(ysprem~x_var, data = my_data))
 
 # -----------------------------------------------------------------
 
