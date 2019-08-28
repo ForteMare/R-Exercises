@@ -43,53 +43,44 @@ hist(xsprem)
 boxplot(xsprem) 
 
 
-plot(xsprem, ysprem, ylab = "rejtingSVE", xlab = "Languages", 
+plot(xsprem, ysprem, ylab = "treunutniR", xlab = "sveR", 
      main = "Regresijski grafikon")
 
 cor.test(xsprem, ysprem, method = "pearson") 
 
-lm(ysprem~x_var, data = my_data) 
+lm(ysprem~xsprem, data = my_data) 
 
-plot(xsprem, ysprem, ylab = "rejtingSVE", xlab = "Languages", 
-     main = "Linear Regression Plot for Variables Price and Languages")
-abline(lm(ysprem~x_var, data = my_data), col = "blue")
+plot(xsprem, ysprem, ylab = "trenutniR", xlab = "sveR", 
+     main = "Linija linearne regresije na regresijkom grafikonu")
+abline(lm(ysprem~x_var, data = my_data), col = "red")
 
-summary(lm(ysprem~x_var, data = my_data))
+summary(lm(ysprem~xsprem, data = my_data))
 
 # 3
 
 prva <- podatki$sadrzaj
 druga <- podatki$zanr
 
-# Displaying frequencies for PG rating, not adequate
 freq(prva, plot = FALSE)
 
-# Displaying frequencies for genre
 freq(druga, plot = FALSE)
 
-# Graphical display of information with barplot
-barplot(prop.table(table(prva)), main = "PG Rating Structure", 
-        col = rainbow(8), ylab = "Percentage", xlab = "PG Rating")
+barplot(prop.table(table(prva)), main = "Struktura rod. sadrzaja", 
+        col = rainbow(8), ylab = "Procenti", xlab = "rejting sadrzaja")
 
-# Graphical display of information with piechart
-pie(prop.table(table(druga)), main = "Structure of Genre", col = rainbow(6))
+pie(prop.table(table(druga)), main = "Struktura zanra", col = rainbow(6))
 
-# Making a contingency table 
 addmargins(table(prva, druga))
 
-# Creating double structure
 addmargins(prop.table(table(druga, prva)) * 100)
 
-# Display of double structure
 dt <- prop.table(table(druga, prva)) * 100
 barplot(dt, col = c("blue", "red"), legend.text = c("Games", "Other"), 
-        main = "Game Types According to PG Rating", 
-        xlab = "PG Rating", ylab = "Percentage")
+        main = "Vrste igri po sadrzaju", 
+        xlab = "Sadrzaj", ylab = "Procenti")
 
-# Frequency Table 
 racunica <- table(druga, prva)
 ki <- chisq.test(racunica)
 ki$expected
 
-# Q3 - G
 assocstats(racunica)
