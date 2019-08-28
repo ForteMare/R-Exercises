@@ -1,7 +1,8 @@
 # 1. 
 
 # Uvoz dokumenta
-original <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\ABC.csv", header = TRUE, sep = ',')
+original <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\ABC.csv", 
+                     header = TRUE, sep = ',')
 
 # Pregled originala
 View(original) 
@@ -9,10 +10,7 @@ View(original)
 # Menjanje spremenljivki
 dodeljene_sprem <- c("rating_count_tot", "rating_count_ver", "prime_genre", "cont_rating")
 moje_sprem <- c("sveR", "trenutniR", "zanr", "sadrzaj") 
-
 podatki <- original[dodeljene_sprem]
-podatki
-
 names(podatki) <- moje_sprem
 View(podatki)
 
@@ -52,7 +50,7 @@ lm(ysprem~xsprem, data = my_data)
 
 plot(xsprem, ysprem, ylab = "trenutniR", xlab = "sveR", 
      main = "Linija linearne regresije na regresijkom grafikonu")
-abline(lm(ysprem~x_var, data = my_data), col = "red")
+abline(lm(ysprem~xsprem, data = my_data), col = "yellow")
 
 summary(lm(ysprem~xsprem, data = my_data))
 
@@ -66,16 +64,16 @@ freq(prva, plot = FALSE)
 freq(druga, plot = FALSE)
 
 barplot(prop.table(table(prva)), main = "Struktura rod. sadrzaja", 
-        col = rainbow(8), ylab = "Procenti", xlab = "rejting sadrzaja")
+        col = "blue", ylab = "Procenti", xlab = "rejting sadrzaja")
 
-pie(prop.table(table(druga)), main = "Struktura zanra", col = rainbow(6))
+pie(prop.table(table(druga)), main = "Struktura zanra", col = c("blue", "white"))
 
-addmargins(table(prva, druga))
+addmargins(table(druga, prva))
 
 addmargins(prop.table(table(druga, prva)) * 100)
 
-dt <- prop.table(table(druga, prva)) * 100
-barplot(dt, col = c("blue", "red"), legend.text = c("Games", "Other"), 
+tempo <- prop.table(table(druga, prva)) * 100
+barplot(tempo, col = c("black", "white"), legend.text = c("Games", "Other"), 
         main = "Vrste igri po sadrzaju", 
         xlab = "Sadrzaj", ylab = "Procenti")
 
