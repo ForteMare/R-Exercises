@@ -1,7 +1,7 @@
 # 1. 
 
 # Uvoz dokumenta
-original <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\ABC.csv", 
+original <- read.csv(file = "C:\\Korisnik\\Buric\\Dokumenti\\FIS\\Statistika1\\podaci.csv", 
                      header = TRUE, sep = ',')
 
 # Pregled originala
