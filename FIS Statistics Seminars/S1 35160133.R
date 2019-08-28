@@ -22,7 +22,7 @@ View(my_data)
 # -----------------------------------------------------------------
 
 # ------ 2. NUMERIC VARIABLE ANALYSIS OF PRICE AND LANGUAGES ------
-# Assagning new variables for brevity: 
+# Assigning new variables for brevity: 
 y_var <- my_data$price
 x_var <- my_data$languages
 
@@ -46,8 +46,8 @@ var(x_var) # Returns Correlation, Variance, and Covariance
 hist(y_var) # Create a histogram 
 boxplot(y_var) # Create a boxlot 
 
-hist(x_var) # Create a histogram TURNED OFF
-boxplot(x_var) # Create a boxlot TURNED OFF
+hist(x_var) # Create a histogram
+boxplot(x_var) # Create a boxlot
 
 
 
