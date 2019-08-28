@@ -1,15 +1,12 @@
 # 1. 
 
-# Importing the file: NOTICE THIS IS A TEMPORARY LOCATION!
+# Uvoz dokumenta
 original <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\ABC.csv", header = TRUE, sep = ',')
 
-# Display the imported file 
-original
-
-# Display data
+# Pregled originala
 View(original) 
 
-# Editing variables
+# Menjanje spremenljivki
 dodeljene_sprem <- c("rating_count_tot", "rating_count_ver", "prime_genre", "cont_rating")
 moje_sprem <- c("sveR", "trenutniR", "zanr", "sadrzaj") 
 
@@ -20,7 +17,6 @@ names(podatki) <- moje_sprem
 View(podatki)
 
 # 2
-# Assigning new variables for brevity: 
 ysprem <- podatki$trenutniR
 xsprem <- podatki$sveR
 
@@ -40,7 +36,6 @@ IQR(xsprem) # Returns the Inter Quartile Range
 sd(xsprem) # Returns the Standard Deviation
 var(xsprem) # Returns Correlation, Variance, and Covariance
 
-# Create a histogram and a boxplot for numeric variables
 hist(ysprem) # Create a histogram 
 boxplot(ysprem) # Create a boxlot 
 
@@ -48,58 +43,51 @@ hist(xsprem) # Create a histogram
 boxplot(xsprem) # Create a boxlot
 
 
-
-# Regression Plot Diagram 
 plot(xsprem, ysprem, ylab = "rejtingSVE", xlab = "Languages", 
      main = "Regression Plot for Variables Price and Languages")
 
-# Pearson Correlation Coefficient calculation
-cor.test(xsprem, ysprem, method = "pearson") # Order of X and Y does not matter
+cor.test(xsprem, ysprem, method = "pearson") 
 
-# Relationships between numeric variables
 lm(ysprem~x_var, data = my_data) # This is the correct order
 
-# Plotting the graph with correlations
 plot(xsprem, ysprem, ylab = "rejtingSVE", xlab = "Languages", 
      main = "Linear Regression Plot for Variables Price and Languages")
 abline(lm(ysprem~x_var, data = my_data), col = "blue")
 
-# Calculating Determination coefficient
 summary(lm(ysprem~x_var, data = my_data))
 
 # 3
 
-#Creating abbreviated variables
-a <- podatki$sadrzaj
-b <- podatki$zanr
+prva <- podatki$sadrzaj
+druga <- podatki$zanr
 
 # Displaying frequencies for PG rating, not adequate
-freq(a, plot = FALSE)
+freq(prva, plot = FALSE)
 
 # Displaying frequencies for genre
-freq(b, plot = FALSE)
+freq(druga, plot = FALSE)
 
 # Graphical display of information with barplot
-barplot(prop.table(table(a)), main = "PG Rating Structure", 
+barplot(prop.table(table(prva)), main = "PG Rating Structure", 
         col = rainbow(8), ylab = "Percentage", xlab = "PG Rating")
 
 # Graphical display of information with piechart
-pie(prop.table(table(b)), main = "Structure of Genre", col = rainbow(6))
+pie(prop.table(table(druga)), main = "Structure of Genre", col = rainbow(6))
 
 # Making a contingency table 
-addmargins(table(a, b))
+addmargins(table(prva, druga))
 
 # Creating double structure
-addmargins(prop.table(table(b, a)) * 100)
+addmargins(prop.table(table(druga, prva)) * 100)
 
 # Display of double structure
-dt <- prop.table(table(b, a)) * 100
+dt <- prop.table(table(druga, prva)) * 100
 barplot(dt, col = c("blue", "red"), legend.text = c("Games", "Other"), 
         main = "Game Types According to PG Rating", 
         xlab = "PG Rating", ylab = "Percentage")
 
 # Frequency Table 
-racunica <- table(b, a)
+racunica <- table(druga, prva)
 ki <- chisq.test(racunica)
 ki$expected
 
