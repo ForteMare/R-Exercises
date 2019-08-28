@@ -99,9 +99,10 @@ addmargins(prop.table(table(b, a)) * 100)
 # Display of double structure
 dt <- prop.table(table(b, a)) * 100
 barplot(dt, col = c("blue", "red"), legend.text = c("Games", "Other"), 
-        main = "Structure of Genre and PG Rating", xlab = "PG Rating", ylab = "Percentage")
+        main = "Game Percentages According to PG Rating", 
+        xlab = "PG Rating", ylab = "Percentage")
 
-# Q3 - F 
+# Frequency Table 
 calc <- table(b, a)
 chi <- chisq.test(calc)
 chi$expected
