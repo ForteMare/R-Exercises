@@ -51,15 +51,15 @@ boxplot(x_var) # Create a boxlot TURNED OFF
 
 
 
-# Plotting the graph 
+# Plot Diagram 
 plot(x_var, y_var, ylab = "Price", xlab = "Languages", 
      main = "Plot Diagram for Variables Price and Languages")
 
 # Pearson Correlation Coefficient calculation
-cor.test(x_var, y_var, method = "pearson")
+cor.test(x_var, y_var, method = "pearson") # Order of X and Y does not matter
 
 # Relationships between numeric variables
-lm(y_var~x2, data = my_data)
+lm(y_var~x_var, data = my_data)
 
 # Plotting the graph with correlations
 plot(y_var, x_var, xlab = "App Price", ylab = "Number of Languages", 
