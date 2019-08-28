@@ -1,4 +1,4 @@
-# ------ 1. DESCRIPTION AND EDITING OF DATA ------
+# 1. 
 
 # Importing the file: NOTICE THIS IS A TEMPORARY LOCATION!
 original <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\ABC.csv", header = TRUE, sep = ',')
@@ -11,7 +11,7 @@ View(original)
 
 # Editing variables
 dodeljene_sprem <- c("rating_count_tot", "rating_count_ver", "prime_genre", "cont_rating")
-moje_sprem <- c("sveR", "trenutniR", "zanr", "sadrzaj") # PG is short for Parental Guidance
+moje_sprem <- c("sveR", "trenutniR", "zanr", "sadrzaj") 
 
 podatki <- original[dodeljene_sprem]
 podatki
@@ -19,9 +19,7 @@ podatki
 names(podatki) <- moje_sprem
 View(podatki)
 
-# -----------------------------------------------------------------
-
-# ------ 2. NUMERIC VARIABLE ANALYSIS OF PRICE AND LANGUAGES ------
+# 2
 # Assigning new variables for brevity: 
 ysprem <- podatki$trenutniR
 xsprem <- podatki$sveR
@@ -69,9 +67,7 @@ abline(lm(ysprem~x_var, data = my_data), col = "blue")
 # Calculating Determination coefficient
 summary(lm(ysprem~x_var, data = my_data))
 
-# -----------------------------------------------------------------
-
-# ------ 3. DESCRIPTIVE VARIABLE ANALYSIS OF GENRE AND CONTENT RATING ------
+# 3
 
 #Creating abbreviated variables
 a <- podatki$sadrzaj
@@ -109,5 +105,3 @@ ki$expected
 
 # Q3 - G
 assocstats(racunica)
-
-# -------------------------- FINISH -----------------------------------
