@@ -17,91 +17,91 @@ my_data <- imported_raw_data[assigned_vars]
 my_data
 
 names(my_data) <- renamed_vars
-#View(my_data)
+View(my_data)
 
 # -----------------------------------------------------------------
 
 # ------ 2. NUMERIC VARIABLE ANALYSIS OF PRICE AND LANGUAGES ------
 # Assagning new variables for brevity: 
-x1 <- my_data$price
-x2 <- my_data$languages
+y_var <- my_data$price
+x_var <- my_data$languages
 
-summary(x1)
+summary(y_var)
 
-range(x1) # Returns Range of Values
-diff(range(x1)) # Returns Lagged Difference
-IQR(x1) # Returns the Inter Quartile Range
-sd(x1) # Returns the Standard Deviation
-var(x1) # Returns Correlation, Variance, and Covariance
+range(y_var) # Returns Range of Values
+diff(range(y_var)) # Returns Lagged Difference
+IQR(y_var) # Returns the Inter Quartile Range
+sd(y_var) # Returns the Standard Deviation
+var(y_var) # Returns Correlation, Variance, and Covariance
 
-summary(x2)
+summary(x_var)
 
-range(x2) # Returns Range of Values
-diff(range(x2)) # Returns Lagged Difference
-IQR(x2) # Returns the Inter Quartile Range
-sd(x2) # Returns the Standard Deviation
-var(x2) # Returns Correlation, Variance, and Covariance
+range(x_var) # Returns Range of Values
+diff(range(x_var)) # Returns Lagged Difference
+IQR(x_var) # Returns the Inter Quartile Range
+sd(x_var) # Returns the Standard Deviation
+var(x_var) # Returns Correlation, Variance, and Covariance
 
 # Create a histogram and a boxplot for numeric variables
-hist(x1) # Create a histogram TURNED OFF
-boxplot(x1) # Create a boxlot TURNED OFF
+hist(y_var) # Create a histogram 
+boxplot(y_var) # Create a boxlot 
 
-#hist(x2) # Create a histogram TURNED OFF
-boxplot(x2) # Create a boxlot TURNED OFF
+hist(x_var) # Create a histogram TURNED OFF
+boxplot(x_var) # Create a boxlot TURNED OFF
 
 # Plotting the graph 
-plot(x1, x2, xlab = "App Price", ylab = "Number of Languages", 
+plot(y_var, x_var, xlab = "App Price", ylab = "Number of Languages", 
      main = "Plot Diagram for Variables Price and No. of Languages")
 
 # Pearson Correlation Coefficient calculation
-cor.test(x1, x2, method = "pearson")
+cor.test(y_var, x_var, method = "pearson")
 
 # Relationships between numeric variables
-lm(x1~x2, data = my_data)
+lm(y_var~x2, data = my_data)
 
 # Plotting the graph with correlations
-plot(x1, x2, xlab = "App Price", ylab = "Number of Languages", 
+plot(y_var, x_var, xlab = "App Price", ylab = "Number of Languages", 
      main = "Plot Diagram for Variables Price and No. of Languages")
-abline(lm(x1~x2, data = my_data), col = "blue")
+abline(lm(y_var~x2, data = my_data), col = "blue")
 
 # Calculating Determination coefficient
-summary(lm(x1~x2, data = my_data))
+summary(lm(y_var~x2, data = my_data))
 
 # -----------------------------------------------------------------
 
 # ------ 3. DESCRIPTIVE VARIABLE ANALYSIS OF GENRE AND CONTENT RATING ------
 
 #Creating abbreviated variables
-y1 <- my_data$pg
-y2 <- my_data$genre
+a <- my_data$pg
+b <- my_data$genre
 
 
 # Displaying frequencies for PG rating, not adequate
-table(y1)
+table(a)
 
 # Displaying frequencies for genre
-table(y2)
+table(b)
 
 # Graphical display of information with barplot
-barplot(prop.table(table(y1)), main = "Structure of PG Rating", 
+barplot(prop.table(table(a)), main = "Structure of PG Rating", 
         col = rainbow(4), ylab = "Percentage", xlab = "PG Rating")
 
 # Graphical display of information with piechart
-pie(prop.table(table(y2)), main = "Structure of Genre", col = c("yellow", "cyan"))
+pie(prop.table(table(b)), main = "Structure of Genre", col = c("yellow", "cyan"))
 
 # Making a contingency table 
-addmargins(table(y1, y2))
+addmargins(table(a, b))
 
 # Creating double structure - 3.E 
-addmargins(prop.table(table(y1, y2)) * 100)
+addmargins(prop.table(table(a, b)) * 100)
 
 # Display of double structure
-dt <- prop.table(table(y2, y1)) * 100
+dt <- prop.table(table(b, a)) * 100
 barplot(dt, col = c("blue", "red"), legend.text = c("Games", "Other"), 
         main = "Structure of Genre and PG Rating", xlab = "PG Rating", ylab = "Percentage")
 
 # Q3 - F 
-calc <- table(y2, y1)
+calc <- table(b, a)
 chi <- chisq.test(calc)
 chi$expected
 
