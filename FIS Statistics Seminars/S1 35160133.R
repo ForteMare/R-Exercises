@@ -59,15 +59,15 @@ plot(x_var, y_var, ylab = "Price", xlab = "Languages",
 cor.test(x_var, y_var, method = "pearson") # Order of X and Y does not matter
 
 # Relationships between numeric variables
-lm(y_var~x_var, data = my_data)
+lm(y_var~x_var, data = my_data) # This is the correct order
 
 # Plotting the graph with correlations
 plot(x_var, y_var, ylab = "Price", xlab = "Languages", 
      main = "Plot Diagram for Variables Price and Languages")
-abline(lm(y_var~x2, data = my_data), col = "blue")
+abline(lm(y_var~x_var, data = my_data), col = "green")
 
 # Calculating Determination coefficient
-summary(lm(y_var~x2, data = my_data))
+summary(lm(y_var~x_var, data = my_data))
 
 # -----------------------------------------------------------------
 
