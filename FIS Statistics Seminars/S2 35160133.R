@@ -94,5 +94,24 @@ describeBy(x_var, group = z2, mat = TRUE)
 
 # 3B 
 var.test(x_var ~ z2, data = my_data)
+
+# 3C 
+t.test(x_var ~ z2, data = my_data, var.equal = TRUE)
+
+# ------------------------------------------------------
+
+
+# ---------- 4. TWO INDEPENDENT SAMPLES ----------------
+# 4A - Contingency Table 
+
+my_table <- table(z1, z2)
+my_table
+
+# 4B - Chi Squared
+chiTest <- chisq.test(my_table)
+chiTest
+
+chiTest$observed
+chiTest$expected
 # ------------------------------------------------------
 
