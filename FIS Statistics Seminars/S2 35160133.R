@@ -129,5 +129,16 @@ plot(x_var, y_var, main = "Radiation Chart",
 # 5B - Pearson correlation coefficient
 cor(x_var, y_var)
 
+# 5C Testing
+cor.test(x_var, y_var, alternative = "greater")
+
+# 5D Dependancy between variables
+lm(y_var ~ x_var)
+
+plot(x_var, y_var, main = "Radiation Chart", xlab = "Number of Languages", 
+     ylab = "App Price")
+abline(lm(y_var ~ x_var), col = "orange")
 # ------------------------------------------------------
+
+
 
