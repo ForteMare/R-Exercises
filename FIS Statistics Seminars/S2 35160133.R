@@ -28,8 +28,21 @@ library(psych)
 describe(my_data[ c("price", "languages")])
 
 # 1B2
-t.test(y_var, mu = 1.49, conf.level = 0.95, alternative = "less")
-t.test(x_var, mu = 4.63, conf.level = 0.95, alternative = "less")
+#t.test(y_var, mu = 1.49, conf.level = 0.95, alternative = "less")
+#t.test(x_var, mu = 4.63, conf.level = 0.95, alternative = "less")
+# NOT WORKING, CORRECT LATER! 
+
+# 1C
+
+# Assign Alpha
+alpha <- 0.05
+n <- length((y_var))
+n
+povp<-mean(moji_podatki$velikost); povp
+s<-sd(moji_podatki$velikost); s 
+z<-qnorm(1 - alpha); z 
+povp+(z*s/sqrt(n)) # zgornji interval
+
 
 # ------------------------------------------------------
 
