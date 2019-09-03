@@ -113,5 +113,13 @@ chiTest
 
 chiTest$observed
 chiTest$expected
+
+# 4C 
+new_chiTest <- chisq.test(table(z1, z2))
+new_chiTest
+# ------------------------------------------------------
+
+# ---------- 5. VARIABLE DEPENDANCY ----------------
+
 # ------------------------------------------------------
 
