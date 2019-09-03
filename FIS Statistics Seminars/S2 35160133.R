@@ -22,9 +22,12 @@ y_var <- my_data$price
 x_var <- my_data$languages
 
 # 1B - Arithmetic mean for numeric variables
-library(psych)
-describe(my_data[c("price", "languages")])
 
+# 1B1
+library(psych)
+describe(my_data[ c("price", "languages")])
+
+# 1B2
 t.test(y_var, mu = 1.49, conf.level = 0.95, alternative = "less")
 t.test(x_var, mu = 4.63, conf.level = 0.95, alternative = "less")
 
