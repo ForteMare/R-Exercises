@@ -89,5 +89,10 @@ zg
 
 # ---------- 3. TWO INDEPENDENT SAMPLES ----------------
 
+# 3A
+describeBy(x_var, group = z2, mat = TRUE)
+
+# 3B 
+var.test(x_var ~ z2, data = my_data)
 # ------------------------------------------------------
 
