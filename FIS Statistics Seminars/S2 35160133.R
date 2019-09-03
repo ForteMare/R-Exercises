@@ -34,14 +34,20 @@ describe(my_data[ c("price", "languages")])
 
 # 1C
 
-# Assign Alpha
+# Collect relevant variables
+
+# 95% interval
 alpha <- 0.05
-n <- length((y_var))
-n
-povp<-mean(moji_podatki$velikost); povp
-s<-sd(moji_podatki$velikost); s 
-z<-qnorm(1 - alpha); z 
-povp+(z*s/sqrt(n)) # zgornji interval
+
+n <- length(x_var)
+avg <- mean(x_var)
+st_dev <- sd(x_var)
+a_var <- qnorm(1 - alpha)
+
+# Print data for overview
+n; avg; st_dev; a_var; 
+
+st_dev + (a_var * st_dev / sqrt(n)) # Upper interval formula
 
 
 # ------------------------------------------------------
