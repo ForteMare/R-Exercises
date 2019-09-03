@@ -25,7 +25,8 @@ x_var <- my_data$languages
 library(psych)
 describe(my_data[c("price", "languages")])
 
-t.test(x_var, mu = 1.49, conf.level = 0.95, alternative = "less")
+t.test(y_var, mu = 1.49, conf.level = 0.95, alternative = "less")
+t.test(x_var, mu = 4.63, conf.level = 0.95, alternative = "less")
 
 # ------------------------------------------------------
 
