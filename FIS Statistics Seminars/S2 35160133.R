@@ -17,7 +17,13 @@ my_data
 names(my_data) <- renamed_vars
 View(my_data)
 
+# Abbreviated 
+y_var <- my_data$price
+x_var <- my_data$languages
+
 # 1B - Arithmetic mean for numeric variables
+library(psych)
+describe(my_data[c("price", "languages")])
 
 # ------------------------------------------------------
 
