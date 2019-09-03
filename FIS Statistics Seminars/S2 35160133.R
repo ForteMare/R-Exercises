@@ -9,7 +9,8 @@ View(imported_raw_data)
 
 # Renaming variables 
 assigned_vars <- c("price", "cont_rating", "prime_genre", "lang.num")
-renamed_vars <- c("price", "PG", "genre", "languages") # PG is short for Parental Guidance
+renamed_vars <- c("price", "PG", "genre", "languages") 
+# PG is short for Parental Guidance
 
 my_data <- imported_raw_data[assigned_vars]
 my_data
@@ -120,6 +121,13 @@ new_chiTest
 # ------------------------------------------------------
 
 # ---------- 5. VARIABLE DEPENDANCY ----------------
+
+# 5A 
+plot(x_var, y_var, main = "Radiation Chart", 
+     xlab = "Number of Languages", ylab = "App Price")
+
+# 5B - Pearson correlation coefficient
+cor(x_var, y_var)
 
 # ------------------------------------------------------
 
