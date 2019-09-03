@@ -69,5 +69,25 @@ prop.test(32, 200, p = 0.25, alternative = "greater")
 
 # GENRE
 prop.test(114, 200, p = 0.5, alternative = "greater")
+
+# 2B 
+alfa <- 0.05
+z <- 1.65
+zalfa2 <- 1.96
+m <- 114
+n <- 200
+p <- m/n; 
+p
+
+sp <- p - zalfa2 * sqrt((p * (1 - p)) / n) 
+sp
+
+zg <- p + zalfa2 * sqrt((p * (1 - p)) / n)
+zg
+# ------------------------------------------------------
+
+
+# ---------- 3. TWO INDEPENDENT SAMPLES ----------------
+
 # ------------------------------------------------------
 
