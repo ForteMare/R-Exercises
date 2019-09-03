@@ -5,7 +5,7 @@
 # 1A - Import data into R 
 imported_raw_data <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\APPDATA.csv", 
                               header = TRUE, sep = ',')
-#View(imported_raw_data)
+View(imported_raw_data)
 
 # Renaming variables 
 assigned_vars <- c("price", "cont_rating", "prime_genre", "lang.num")
@@ -44,11 +44,30 @@ avg <- mean(x_var)
 st_dev <- sd(x_var)
 a_var <- qnorm(1 - alpha)
 
-# Print data for overview
-n; avg; st_dev; a_var; 
+# Print data for overview # CHECK!
+n; 
+avg; 
+st_dev; 
+a_var; 
 
 st_dev + (a_var * st_dev / sqrt(n)) # Upper interval formula
+# ----------------------------------------------------
 
+# 2. ---------------- ARITHMETIC MEAN AND SAMPLES 
 
+# 2A
+
+# Create new temp variables 
+z1 <- my_data$PG
+z2 <- my_data$genre
+
+freq(z1, plot = FALSE)
+freq(z2, plot = FALSE)
+
+# PG RATING 
+prop.test(32, 200, p = 0.25, alternative = "greater")
+
+# GENRE
+prop.test(114, 200, p = 0.5, alternative = "greater")
 # ------------------------------------------------------
 
