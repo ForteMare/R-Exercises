@@ -138,6 +138,9 @@ lm(y_var ~ x_var)
 plot(x_var, y_var, main = "Radiation Chart", xlab = "Number of Languages", 
      ylab = "App Price")
 abline(lm(y_var ~ x_var), col = "orange")
+
+# 5E 
+summary(lm(y_var ~ x_var))
 # ------------------------------------------------------
 
 
