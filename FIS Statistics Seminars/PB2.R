@@ -8,20 +8,20 @@
 
 
 # 1A - Import data into R 
-imported_raw_data <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\APPDATA.csv", 
+originalni_podaci <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\APPDATA.csv", 
                               header = TRUE, sep = ',')
-#View(imported_raw_data)
+#View(originalni_podaci)
 
-# Renaming variables 
+# Nove spremenljivke
 originalne_spremenljivke <- c("rating_count_tot", 
                               "rating_count_ver", "prime_genre", "cont_rating")
 moje_spremenljivke <- c("rejtingTOT", "rejtingVER", "zanr", "minGodina") 
 
-moji_podaci <- imported_raw_data[originalne_spremenljivke]
+moji_podaci <- originalni_podaci[originalne_spremenljivke]
 moji_podaci
 
 names(moji_podaci) <- moje_spremenljivke
-View(moji_podaci)
+#View(moji_podaci)
 
 # Abbreviated 
 y_var <- moji_podaci$rejtingTOT
