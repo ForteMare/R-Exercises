@@ -48,26 +48,25 @@ alfa <- 0.05
 n <- length(x_var)
 prosek <- mean(x_var)
 st_deviacija <- sd(x_var)
-sprem1 <- qnorm(1 - alfa)
+sprem_temp <- qnorm(1 - alfa)
 
-# Print data for overview # CHECK!
 n; 
 prosek; 
 st_deviacija; 
-sprem1; 
+sprem_temp; 
 
-st_deviacija + (sprem1 * st_deviacija / sqrt(n)) # Upper interval formula
+st_deviacija + (sprem_temp * st_deviacija / sqrt(n)) 
 
 # 2
 
 # 2A
 
 # Create new temp variables 
-z1 <- my_data$minGodina
-z2 <- my_data$zanr
+sprem1 <- my_data$minGodina
+sprem2 <- my_data$zanr
 
-freq(z1, plot = FALSE)
-freq(z2, plot = FALSE)
+freq(sprem1, plot = FALSE)
+freq(sprem2, plot = FALSE)
 
 # PG RATING 
 prop.test(32, 200, p = 0.25, alternative = "greater")
@@ -93,7 +92,7 @@ zg
 # 3
 
 # 3A
-describeBy(x_var, group = z2, mat = TRUE)
+describeBy(x_var, group = sprem2, mat = TRUE)
 
 # 3B 
 var.test(x_var ~ z2, data = my_data)
@@ -105,7 +104,7 @@ t.test(x_var ~ z2, data = my_data, var.equal = TRUE)
 
 # 4A - Contingency Table 
 
-my_table <- table(z1, z2)
+my_table <- table(sprem1, sprem2)
 my_table
 
 # 4B - Chi Squared
@@ -116,7 +115,7 @@ chiTest$observed
 chiTest$expected
 
 # 4C 
-new_chiTest <- chisq.test(table(z1, z2))
+new_chiTest <- chisq.test(table(sprem1, sprem2))
 new_chiTest
 # 5
 
