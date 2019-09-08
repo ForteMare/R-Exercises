@@ -7,9 +7,9 @@
 # 1
 
 
-originalni_podaci <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\APPDATA.csv", 
+originalni_podaci <- read.csv(file = "C:\\Users\\Buric\\Desktop\\FIS\\StatistikaII\\Aplikacije.csv", 
                               header = TRUE, sep = ',')
-#View(originalni_podaci)
+View(originalni_podaci)
 
 originalne_spremenljivke <- c("rating_count_tot", 
                               "rating_count_ver", "prime_genre", "cont_rating")
