@@ -31,7 +31,7 @@ x_var <- moji_podaci$rejtingVER
 
 # 1B1
 library(psych)
-describe(moji_podaci[ c("price", "languages")])
+describe(moji_podaci[ c("rejtingTOT", "rejtingVER")])
 
 # 1B2
 #t.test(y_var, mu = 1.49, conf.level = 0.95, alternative = "less")
