@@ -4,13 +4,13 @@
 # prime_genre - Primary Genre
 # cont_rating - Content Rating
 
-# ----------------- 1. ARITHMETIC MEAN -----------------
+# 1
 
 
 # 1A - Import data into R 
 imported_raw_data <- read.csv(file = "C:\\Users\\Sapun\\Desktop\\S\\APPDATA.csv", 
                               header = TRUE, sep = ',')
-View(imported_raw_data)
+#View(imported_raw_data)
 
 # Renaming variables 
 originalne_spremenljivke <- c("rating_count_tot", 
@@ -57,15 +57,14 @@ st_dev;
 a_var; 
 
 st_dev + (a_var * st_dev / sqrt(n)) # Upper interval formula
-# ----------------------------------------------------
 
-# 2. ---------------- ARITHMETIC MEAN AND SAMPLES 
+# 2
 
 # 2A
 
 # Create new temp variables 
-z1 <- my_data$PG
-z2 <- my_data$genre
+z1 <- my_data$minGodina
+z2 <- my_data$zanr
 
 freq(z1, plot = FALSE)
 freq(z2, plot = FALSE)
@@ -90,10 +89,8 @@ sp
 
 zg <- p + zalfa2 * sqrt((p * (1 - p)) / n)
 zg
-# ------------------------------------------------------
 
-
-# ---------- 3. TWO INDEPENDENT SAMPLES ----------------
+# 3
 
 # 3A
 describeBy(x_var, group = z2, mat = TRUE)
@@ -104,10 +101,8 @@ var.test(x_var ~ z2, data = my_data)
 # 3C 
 t.test(x_var ~ z2, data = my_data, var.equal = TRUE)
 
-# ------------------------------------------------------
+# 4
 
-
-# ---------- 4. TWO INDEPENDENT SAMPLES ----------------
 # 4A - Contingency Table 
 
 my_table <- table(z1, z2)
@@ -123,9 +118,7 @@ chiTest$expected
 # 4C 
 new_chiTest <- chisq.test(table(z1, z2))
 new_chiTest
-# ------------------------------------------------------
-
-# ---------- 5. VARIABLE DEPENDANCY ----------------
+# 5
 
 # 5A 
 plot(x_var, y_var, main = "Radiation Chart", 
@@ -147,6 +140,3 @@ abline(lm(y_var ~ x_var), col = "orange")
 # 5E 
 summary(lm(y_var ~ x_var))
 # ------------------------------------------------------
-
-
-###
