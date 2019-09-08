@@ -62,8 +62,11 @@ st_deviacija + (sprem_temp * st_deviacija / sqrt(n))
 # 2A
 
 # Create new temp variables 
-sprem1 <- my_data$minGodina
-sprem2 <- my_data$zanr
+sprem1 <- moji_podaci$minGodina
+sprem2 <- mmoji_podaci$zanr
+
+sprem1
+sprem2
 
 freq(sprem1, plot = FALSE)
 freq(sprem2, plot = FALSE)
