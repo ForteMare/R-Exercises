@@ -34,8 +34,8 @@ library(psych)
 describe(moji_podaci[ c("rejtingTOT", "rejtingVER")])
 
 # 1B2
-#t.test(y_var, mu = 1.49, conf.level = 0.95, alternative = "less")
-#t.test(x_var, mu = 4.63, conf.level = 0.95, alternative = "less")
+t.test(y_var)
+t.test(x_var)
 # NOT WORKING, CORRECT LATER! 
 
 # 1C
@@ -43,20 +43,20 @@ describe(moji_podaci[ c("rejtingTOT", "rejtingVER")])
 # Collect relevant variables
 
 # 95% interval
-alpha <- 0.05
+alfa <- 0.05
 
 n <- length(x_var)
-avg <- mean(x_var)
-st_dev <- sd(x_var)
-a_var <- qnorm(1 - alpha)
+prosek <- mean(x_var)
+st_deviacija <- sd(x_var)
+sprem1 <- qnorm(1 - alfa)
 
 # Print data for overview # CHECK!
 n; 
-avg; 
-st_dev; 
-a_var; 
+prosek; 
+st_deviacija; 
+sprem1; 
 
-st_dev + (a_var * st_dev / sqrt(n)) # Upper interval formula
+st_deviacija + (sprem1 * st_deviacija / sqrt(n)) # Upper interval formula
 
 # 2
 
